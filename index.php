@@ -7,37 +7,30 @@
  */
 ?>
 
-
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <title>FizzBuzzBazz: Ping-Chris Zheng</title>
         <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-        <script type="text/javascript">
-//            function validateNumber(event) {
-//                var key = window.event ? event.keyCode : event.which;
-//                if (event.keyCode == 8 || event.keyCode == 46
-//                 || event.keyCode == 37 || event.keyCode == 39) {
-//                    return true;
-//                }
-//                else if ( key < 48 || key > 57 ) {
-//                    return false;
-//                }
-//                else return true;
-//            };
-            
+        <script type="text/javascript">            
             $(document).ready(function() {
-//                $("input").keypress(validateNumber);
                 $("button").click(function(){
                     var func = this.id;
                     var start_number = $("#"+func+"Start").val();
                     var end_number = $("#"+func+"End").val();
-                    console.log(start_number);
-                    console.log(end_number);
-                    $.post("ajax.php", {'function': func, 'start': start_number, 'end': end_number}, function(response) {
-                        console.log(response);
+                    $.post("ajax.php", {'function': func, 'start': start_number, 'end': end_number}, function(response){
+                        var data = jQuery.parseJSON(response);
+                        // If validation fails, display the error
+                        if(data.validation === '0'){
+                            $("#"+func+"Result").html(data.error);
+                            $("#"+func+"Result").css("color", "red");
+                        }
+                        // If validation succeeds, display the fizzbuzz or fizzbuzzbazz result
+                        else{
+                            $("#"+func+"Result").html(data.fizzbuzz);
+                            $("#"+func+"Result").css("color", "black");
+                        }
                     });
                     return false;
                 });

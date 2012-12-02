@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Fizz Buzz & Fizz Buzz Bazz
+ * Fizz Buzz & Fizz Buzz Bazz functions
  * 
  * @author   Ping-Chris Zheng <christophercheng1222@gmail.com> 
  * @since    Dec 01, 2012

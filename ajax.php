@@ -10,31 +10,31 @@
 $data = $_POST;
 
 // Validate the start and end number first
-$errors = array();
+$error = '';
 // Validate if the input is integer
-if(!preg_match('/^[1-9][0-9]*$/',$data['start']) || !preg_match('/^[1-9][0-9]*$/',$data['end']))
+if(!preg_match('/^[1-9][0-9]*$/', $data['start']) || !preg_match('/^[1-9][0-9]*$/', $data['end']))
 {
-    $errors[] = 'Invalid start/end number';
+    $error = 'Invalid start or end number, only positive integers are accepted.';
 }
 else
 {
     // Validate if the start number is less than end number
-    if(strcmp($data['start'], $data['end']) >= 0)
+    if($data['start'] >= $data['end'])
     {
-        $errors[] = "Start number is larger than end number, please correct.";
+        $error = "Start number is larger than end number, please correct.";
     }
 }
 
 $result = array();
 // send the error response if validation fails, send the output otherwise
-if(!empty($errors))
+if($error != '')
 {
-    $result['validation'] = 'fail';
-    $result['errors'] = $errors;
+    $result['validation'] = '0';
+    $result['error'] = $error;
 }
 else
 {
-    $result['validation'] = 'success';
+    $result['validation'] = '1';
     
     require_once 'functions.php';
     $start = intval($data['start']);
