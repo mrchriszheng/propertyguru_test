@@ -22,6 +22,7 @@ function fizz_buzz_bazz($start = 1, $end = 100)
         if ($i % 15 === 0)
         {
             print_pre('FizzBuzz');
+            $fb_count = 0;
         }
         elseif ($i % 3 === 0)
         {
