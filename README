@@ -3,4 +3,6 @@ Testing page for PropertyGuru Task 1 - By Ping-Chris Zheng
 HOW TO RUN:
 1. Get a copy of the code: git clone git://github.com/monsterbeasty/propertyguru_test.git
 2. Put the the propertyguru_test source folder under your server dir.
-3. Go to <YOUR_URL>/propertyguru_test/index.php to run the test.
+3. Go to <YOUR_URL>/propertyguru_test/index.php in the browser to run the test.
+
+Note: Please make sure javascript is enabled in your browser and internet connection is required.
