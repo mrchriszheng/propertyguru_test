@@ -23,29 +23,26 @@ function fizz_buzz($start = 1, $end = 100)
     {
         if ($i % 3 === 0 && $i % 5 === 0)
         {
-            print_pre('FizzBuzz');
+            echo 'FizzBuzz';
         }
         elseif ($i % 3 === 0)
         {
-            print_pre('Fizz');
+            echo 'Fizz';
         }
         elseif ($i % 5 === 0)
         {
-            print_pre('Buzz');
+            echo 'Buzz';
         }
         else
         {
-            print_pre($i);
+            echo $i;
+        }
+        
+        if($i != $end)
+        {
+            echo ', ';
         }
     }
-}
-
-function print_pre($array)
-{
-    print("<pre>");
-    $output = print_r($array, true);
-    print(htmlspecialchars($output));
-    print("</pre>");
 }
 
 ?>
