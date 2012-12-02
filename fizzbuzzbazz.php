@@ -23,40 +23,37 @@ function fizz_buzz_bazz($start = 1, $end = 100)
     {
         if ($i % 15 === 0)
         {
-            print_pre('FizzBuzz');
+            echo 'FizzBuzz';
             $fb_count = 0;
         }
         elseif ($i % 3 === 0)
         {
-            print_pre('Fizz');
+            echo 'Fizz';
             $fb_count++;
         }
         elseif ($i % 5 === 0)
         {
-            print_pre('Buzz');
+            echo 'Buzz';
             $fb_count++;
         }
         else
         {
             if ($fb_count > 1)
             {
-                print_pre('Bazz');
+                echo 'Bazz';
                 $fb_count = 0;
             }
             else
             {
-                print_pre($i);
+                echo $i;
             }
         }
+        
+        if($i != $end)
+        {
+            echo ', ';
+        }
     }
-}
-
-function print_pre($array)
-{
-    print("<pre>");
-    $output = print_r($array, true);
-    print(htmlspecialchars($output));
-    print("</pre>");
 }
 
 ?>
