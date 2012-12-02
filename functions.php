@@ -10,81 +10,88 @@
 /**
  * Fizz Buzz
  * 
- * @param   int $start  The number to start from (defaults to 1).
- * @param   int $end    The number to finish with (defaults to 100).
- * @return
+ * @param   int     $start  The number to start from (defaults to 1).
+ * @param   int     $end    The number to finish with (defaults to 100).
+ * @return  string $result  The string with the fizz, buzz and the numbers.
  * 
  */
 function fizz_buzz($start = 1, $end = 100)
 {
+    $result = '';
     for ($i = $start; $i <= $end; $i++)
     {
         if ($i % 3 === 0 && $i % 5 === 0)
         {
-            print_pre('FizzBuzz');
+            $result .= 'FizzBuzz';
         }
         elseif ($i % 3 === 0)
         {
-            print_pre('Fizz');
+            $result .= 'Fizz';
         }
         elseif ($i % 5 === 0)
         {
-            print_pre('Buzz');
+            $result .= 'Buzz';
         }
         else
         {
-            print_pre($i);
+            $result .= $i;
+        }
+        
+        if($i != $end)
+        {
+            $result .= ', ';
         }
     }
+    return $result;
 }
 
 /**
  * Fizz Buzz Bazz
  * 
- * @param   int $start  The number to start from (defaults to 1).
- * @param   int $end    The number to finish with (defaults to 100).
+ * @param   int     $start   The number to start from (defaults to 1).
+ * @param   int     $end     The number to finish with (defaults to 100).
+ * @return  string  $result  The string with the fizz, buzz, bazz and the numbers.
  *      
  */
 function fizz_buzz_bazz($start = 1, $end = 100)
 {
+    $result = '';
     $fb_count = 0;
     for ($i = $start; $i <= $end; $i++)
     {
         if ($i % 15 === 0)
         {
-            print_pre('FizzBuzz');
+            $result .= 'FizzBuzz';
         }
         elseif ($i % 3 === 0)
         {
-            print_pre('Fizz');
+            $result .= 'Fizz';
             $fb_count++;
         }
         elseif ($i % 5 === 0)
         {
-            print_pre('Buzz');
+            $result .= 'Buzz';
             $fb_count++;
         }
         else
         {
             if ($fb_count > 1)
             {
-                print_pre('Bazz');
+                $result .= 'Bazz';
                 $fb_count = 0;
             }
             else
             {
-                print_pre($i);
+                $result .= $i;
             }
         }
+        
+        if($i != $end)
+        {
+            $result .= ', ';
+        }
     }
-}
-
-function print_pre($array)
-{
-    print("<pre>");
-    $output = print_r($array, true);
-    print(htmlspecialchars($output));
-    print("</pre>");
+    return $result;
 }
 
 ?>
