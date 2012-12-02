@@ -1,42 +1,11 @@
 <?php
 
 /**
- * Fizz Buzz function
+ * Fizz Buzz Bazz function
  * 
  * @author   Ping-Chris Zheng <christophercheng1222@gmail.com> 
  * @since    Dec 01, 2012
  */
-
-/**
- * Fizz Buzz
- * 
- * @param   int $start  The number to start from (defaults to 1).
- * @param   int $end    The number to finish with (defaults to 100).
- * @return
- * 
- */
-function fizz_buzz($start = 1, $end = 100)
-{
-    for ($i = $start; $i <= $end; $i++)
-    {
-        if ($i % 3 === 0 && $i % 5 === 0)
-        {
-            print_pre('FizzBuzz');
-        }
-        elseif ($i % 3 === 0)
-        {
-            print_pre('Fizz');
-        }
-        elseif ($i % 5 === 0)
-        {
-            print_pre('Buzz');
-        }
-        else
-        {
-            print_pre($i);
-        }
-    }
-}
 
 /**
  * Fizz Buzz Bazz
