@@ -7,6 +7,8 @@
  * @since    Dec 01, 2012
  */
 
+fizz_buzz_bazz();
+
 /**
  * Fizz Buzz Bazz
  * 
